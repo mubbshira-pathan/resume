@@ -87,6 +87,53 @@ position: fixed;
             bottom:10px;
 
         }
+        /* Mobile view adjustments */
+@media (max-width: 480px) {
+    .header {
+        height: auto;
+        position: relative;
+        padding-bottom: 20px;
+    }
+
+    .h {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .h p {
+        font-size: 18px;
+        top: 0;
+        right: 0;
+        margin: 10px 0;
+    }
+
+    .right a {
+        position: static;
+        display: inline-block;
+        margin: 5px 10px;
+        left: 0;
+        bottom: 0;
+    }
+
+    .main {
+        top: 0;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .photo img {
+        position: static;
+        margin-top: 20px;
+        width: 180px;
+        height: 180px;
+    }
+
+    .p2, .p3 {
+        display: none; /* Hide extra floating images on mobile for cleaner look */
+    }
+}
+
     </style>
 </head>
 
