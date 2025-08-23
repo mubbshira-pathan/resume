@@ -1,164 +1,159 @@
-<!DOCTYPE html>
-<html>
-    <head>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-        <style>
-            *{
-                margin: 0;
-                padding:0;
-               
-                
-            }
-.header{
-    width: 100%;
-    height: 100vh;
-    background-image: url("mb\ \(1\)\ \(1\).png");
-    background-repeat: no-repeat;
-    background-size: cover;
-     position: fixed;
-}
-.main{
-    position: relative;
-    left:40%;
-    top:20%;
-}
-.mm{
-            position: relative;
-            bottom:690px;
-        }
-        .mmm{
-            position: relative;
-            bottom:720px;
-            left:95%;
-        }
-.n2{
-    position: relative;
-    left:33%;
-    bottom:370px;
-}
-.para{
-    position: relative;
-    right:4%;
-    top:20px;
-}
-h2{
-    color:brown;
-    text-shadow: 0px 5px 14px yellow;
-    
-}
-/* Mobile responsive styles */
-@media (max-width: 480px) {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4a1;
+    }
+
     .header {
-        height: auto;
-        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        background-image: url("mb (1) (1).png");
+        background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         padding: 20px;
+        position: relative;
     }
 
     .main {
-        position: static;
-        left: 0;
-        top: 0;
-        padding: 15px;
-        background: rgba(255, 255, 255, 0.85); /* makes text visible over image */
-        border-radius: 10px;
+        max-width: 900px;
+        margin: 100px auto 20px auto;
+        background: rgba(255, 255, 255, 0.85);
+        padding: 30px;
+        border-radius: 12px;
     }
 
     h2 {
-        font-size: 20px;
-        text-align: center;
+        color: brown;
+        text-shadow: 0px 5px 14px yellow;
+        margin-bottom: 15px;
+        font-size: 24px;
     }
 
     ul {
+        list-style-type: square;
         padding-left: 20px;
-        font-size: 14px;
-        line-height: 1.6;
+        margin-bottom: 20px;
     }
 
-    .n2 {
-        position: static;
-        margin-top: 15px;
+    li {
+        margin-bottom: 10px;
+        font-size: 16px;
     }
 
-    .para {
-        position: static;
+    .career p {
+        font-size: 16px;
+        line-height: 1.5;
         margin-top: 10px;
-        font-size: 14px;
     }
 
-    .mm, .mmm {
-        position: static;
+    .buttons {
         display: flex;
         justify-content: space-between;
         margin-top: 20px;
     }
 
-    .mm img, .mmm img {
-        width: 30px;
-        height: auto;
+    .buttons a img {
+        cursor: pointer;
+        transition: transform 0.3s;
     }
-}
 
- 
+    .buttons a img:hover {
+        transform: scale(1.1);
+    }
 
-    
-        
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .main {
+            margin: 50px 20px;
+            padding: 20px;
+        }
 
-        </style>
-    </head>
-    <body>
-       <div class="header">
+        h2 {
+            font-size: 20px;
+        }
+
+        li {
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .main {
+            margin: 30px 10px;
+            padding: 15px;
+        }
+
+        h2 {
+            font-size: 18px;
+        }
+
+        li {
+            font-size: 13px;
+        }
+
+        .buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .buttons a {
+            margin: 5px 0;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="header">
         <div class="main">
-  
-    
-            <ul type="square">
-                <h2>About Me:</h2><br>
-                <li>Name: Mubbashira Pathan</li><br>
-<li>Education: Diploma in Computer Engineering</li>
-<br>
-<li>CSMSS College of Polytechnic</li><br>
-
-
-<li>Second-Year Student (2023–2026)</li><br><br>
-
-<h2>Academic Excellence:</h2><br>
-
-<li>Scored 85% in First Year</li><br>
-
-<li>Achieved 91% in Second Year</li><br>
-
-<li>Ranked 2nd Topper in Branch</li><br>
-
-            </li>
-            <div class="n2">
-
-<h2>Certifications</h2><br>
-<li>C Programming</li><br>
-
-<li>C++ Programming</li><br>
-
-<li>Java Programming</li><br>
-
-<li>Blockchain & Cryptocurrency Technologies</li><br><Br>
-<div class="para">
-<p>
-    <h2>Career Focus:</h2><br>
-<u><b>Committed to delivering clean code<br> and seamless user experiences.</b></u>
-<br><br>
-Passionate about UI/UX and front-end development.<br>
-Aspiring full-stack developer.
-</p></div>
-            </div>
+            <h2>About Me</h2>
+            <ul>
+                <li>Name: Mubbashira Pathan</li>
+                <li>Education: Diploma in Computer Engineering</li>
+                <li>CSMSS College of Polytechnic</li>
+                <li>Second-Year Student (2023–2026)</li>
             </ul>
+
+            <h2>Academic Excellence</h2>
+            <ul>
+                <li>Scored 85% in First Year</li>
+                <li>Achieved 91% in Second Year</li>
+                <li>Ranked 2nd Topper in Branch</li>
+            </ul>
+
+            <h2>Certifications</h2>
+            <ul>
+                <li>C Programming</li>
+                <li>C++ Programming</li>
+                <li>Java Programming</li>
+                <li>Blockchain & Cryptocurrency Technologies</li>
+            </ul>
+
+            <h2>Career Focus</h2>
+            <div class="career">
+                <p><u><b>Committed to delivering clean code and seamless user experiences.</b></u></p>
+                <p>Passionate about UI/UX and front-end development.<br>Aspiring full-stack developer.</p>
+            </div>
+
+            <div class="buttons">
+                <a href="skill.html"><img src="arr.png" alt="Back" width="40px"></a>
+                <a href="contact.html"><img src="r.png" alt="Next" width="40px"></a>
+            </div>
         </div>
-<div class="mm">
-       <a href="skill.html" ><img id="arrow" src="arr.png" alt="" width="30px"></a>
     </div>
-    <div class="mmm">
-       <a href="contact.html" ><img id="arrow" src="r.png" alt="" width="40px"></a>
-    </div>
-       </div> 
-    </body>
+</body>
 </html>

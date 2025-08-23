@@ -1,109 +1,165 @@
+
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Contact Page</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        .header {
-            width: 100%;
-            height: 100vh;
-            background-image: url("mb\ \(1\)\ \(1\).png");
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: fixed;
-        }
+    body {
+        font-family: Arial, sans-serif;
+    }
 
+    .header {
+        width: 100%;
+        min-height: 100vh;
+        height: 100vh; /* full viewport height on mobile */
+        background-image: url("mb (1) (1).png");
+        background-repeat: no-repeat;
+        background-size: cover; /* cover entire container */
+        background-position: center center; /* center image */
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Dark overlay for readability */
+    .header::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.5); /* normal overlay */
+        z-index: 1;
+    }
+
+    .main {
+        position: relative;
+        z-index: 2;
+        background: rgba(255,255,255,0.9);
+        padding: 25px 20px;
+        border-radius: 10px;
+        max-width: 450px;
+        width: 90%;
+        text-align: center;
+    }
+
+    .main h1 {
+        color: brown;
+        text-shadow: 0px 3px 5px yellow;
+        margin-bottom: 20px;
+        text-decoration: underline;
+        font-size: 28px;
+    }
+
+    .phot {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        text-align: left;
+    }
+
+    .phot-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .phot-item img {
+        width: 30px;
+        height: auto;
+    }
+
+    .phot-item p,
+    .phot-item a {
+        font-size: 15px;
+        color: black;
+        word-break: break-word;
+        text-decoration: none;
+    }
+
+    .phot-item a:hover {
+        text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
         .main {
-            position: relative;
-            left: 60%;
-
+            max-width: 90%;
+            padding: 20px;
         }
 
-        .phot {
-            position: relative;
-            bottom: -40px;
-            font-family:serif;
-
-
+        .phot-item img {
+            width: 25px;
         }
 
-        .phot #i2 {
-            position: relative;
-            right: 5px;
-        }
-
-        .phot #i3 {
-            position: relative;
-            right: 5px;
-            top: 10px;
+        .phot-item p,
+        .phot-item a {
+            font-size: 14px;
         }
 
         .main h1 {
-            color: brown;
-            text-shadow: 0px 5px 14px yellow;
-            text-decoration: underline;
+            font-size: 24px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .header::before {
+            background: rgba(0,0,0,0.3); /* lighter overlay for mobile */
         }
 
-        p {
-            font-size: 15px;
-            position: relative;
-            bottom: 34px;
-            left: 40px;
-        }
-       
-        
-
-        #cal {
-            left: 4%;
+        .main {
+            padding: 15px;
         }
 
-        #e {
-            bottom: 20px;
-            left: 4.5%;
+        .phot-item img {
+            width: 20px;
         }
-        
-        
-        .phot #i4{
-            position: relative;
-            top:20px;
-            left:3px;
+
+        .phot-item p,
+        .phot-item a {
+            font-size: 13px;
         }
-        .phot a{
-            color: black;
-            text-decoration: none;
-            position: relative;
-            bottom:-10px;
-            left:1%;
+
+        .main h1 {
+            font-size: 22px;
         }
-    </style>
+    }
+</style>
 </head>
-
 <body>
-    <div class="header">
-        <div class="main">
-            <h1>Contact</h1>
-            <div class="phot">
-                <img src="loc.png" width="25px">
-                <p>Zenda maidan, Kumbhar galli, Waluj, Aurangabad ,Maharastra</p><br>
-                <img id="i2" src="call.png" width="45px">
-                <p id="cal">8766545652</p>
-                <img id="i3" src="email.png" width="55px">
-                <p id="e">pathanmubbshira@gmail.com</p>
-                <img id="i4" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAkFBMVEUAhLH///8Aga8AgK+Atc5So8TZ7PNYrsve7fMol705k7qXyt3x+vwAe6zX5+/S6PB/vNSWwdYAiLTo9PgRjLa83eml0uNqss5Xq8qTxtqy1OPN4etKpsaz2OUznMDJ5u+jzN1sttFDmL2+2eZ4vNRkqsiIu9NruNJBocN7udK43uqIxdsGkrqpzt6hxdnj7fPqeHeuAAAEqUlEQVR4nO2dbXeiOBiGSSJdENAWEBWqtbq6Wu3M//93W9btbMfJW0sykOx9ndNz+iXyXOYNnoQYBAAAAAAAAAAAAAAAAAAAAAAAAARQlmWs/aN9R2IFmuWLZd1MJk29fGSZd5KUPa6KlPxLWiSxX440WD+RG6rYI0U6rm792oo8l944hlOOYFuNY9Z3aGbYR3xBQmZbHxRpKBR8U7y431DpWNBEr9R53wF250UmSMiD6+2UPcoFyV3oeDtlkk54ZeN2O2XPKkFSuF2JTDrMXDn0HWQXaJyqDV/KvsPsALtXC5J063AzzXYahmTvsCGb6Bj+2XeYHci1DJO+w+zARTkbtlR9h9kB/w39b6X+jzR6s8Xc5dlCZ8YnLs/4/t+1BZlGR7zvO8hO+P/0FAS+PwEHbK4QjFyvwiCfKaqw7wA7Q7d3MsHGg8w+DQux4J0Hgm1XFCpGHqS8W9hekI9qLq6ng99h2xXn3qbYeNFEr7BydDukpvU+90fwDRafVh+6412y96gCr9CgHO/PyWo2q5JzOPar/t6h9Nf/AAAAAADADZSyH1BGPbtzepPL48V8dHi4MtqH60tJvdmOzNj6vm6mUZG+P4imRTRtmt1hzX6DZLu9m4/w2lRUgleMZuW5KfjrB2kxWcaZ5VQCi8+zKZfVX4Hg2uuKX+Ja7Hjjl8hXR9LoWXQdI+T3kusXC1410lCagSRp+CHgmLf/+JZobvGBVJ70Lo6cK7ORIuDTj++iPGktpBPyZC2pkCsiqDllqMrwfbmKbVd6fi2VnfUDGqu+W86WfV1DKkpT8onmgQVH+pX9pbqGB0k2nUdxttAb2R/2DA8aC8w/k1bmO6NFQ9kYLeTJuKI9w9MX/NrrmW6otgxp+JUabHkxK2jN8PKpUfQnlk4Ysk/Mg79wMtpO7RieFh0ESWF0y64dw0R+36riyeQuLDuGXx1l3jHZFe0YdsXkFpdhGpLE3DalgRqm5ipxoIZkZUpwsIZkbaoSB2t4NpW5GaxhlPluSExtxxquoalmOlzDiWOG6eczGoZOrfgdhtP69dvh8PDtdfaZzFQ6N1OJ1g2LzSgsg38W1ILL/qDYkfwRQx3RtmEV5v+tLVEajOfaD/8bFwyj422OlwblWbPwzsyMaNVwVvKqITvqjTqT4RuK0rss1lqtmRgRtGlYC5O79KgzqEaXgRtOZWfbiDfPfzA0MyFaM0wXsqEw37hvWEnHerpVTxpDN1Q8GtAH1w0TxVBPL8o3HwduqIwuq902LJTBsblq3h+2YaIMjl5UE8awDZ/VwWXfnTZ81DBUzRfDNtRYPMpUS4yDNkzH6uBYAkMYwhCGMIQhDGEIQxjCEIYwhCEMYQhDGMIQhjCEIQxhCEMYwhCGMIQhDGEIQxjCEIYwhCEMYQhDGMIQhjCEIQxdNKSqc8fcN7RyfumQDINc8YJVzTmTyi1DxTnCEe8NJuU5wsMyDM6SFwG/c4/fUL7FW2n8sCddK15A3Bk7AZsdN82ES7MU/SzZYscvceU11rruSfYZbx9iqgrbM8UFHpnwQHgm+351D8uXfkggPhAeAAAAAAAAAAAAAAAAAAAAAAD+j/wNCQx307ChGBYAAAAASUVORK5CYII="
-                    alt="" width="30px">
-                    <a href="https://www.linkedin.com/in/mubbshira-p-73b2a8321">https://www.linkedin.com/in/mubbshira-p-73b2a8321</a>
+
+<div class="header">
+    <div class="main">
+        <h1>Contact</h1>
+        <div class="phot">
+            <div class="phot-item">
+                <img src="loc.png" alt="Location">
+                <p>Zenda maidan, Kumbhar galli, Waluj, Aurangabad, Maharashtra</p>
+            </div>
+            <div class="phot-item">
+                <img src="call.png" alt="Call">
+                <p>8766545652</p>
+            </div>
+            <div class="phot-item">
+                <img src="email.png" alt="Email">
+                <p>pathanmubbshira@gmail.com</p>
+            </div>
+            <div class="phot-item">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAkFBMVEUAhLH///8Aga8AgK+Atc5So8TZ7PNYrsve7fMol705k7qXyt3x+vwAe6zX5+/S6PB/vNSWwdYAiLTo9PgRjLa83eml0uNqss5Xq8qTxtqy1OPN4etKpsaz2OUznMDJ5u+jzN1sttFDmL2+2eZ4vNRkqsiIu9NruNJBocN7udK43uqIxdsGkrqpzt6hxdnj7fPqeHeuAAAEqUlEQVR4nO2dbXeiOBiGSSJdENAWEBWqtbq6Wu3M//93W9btbMfJW0sykOx9ndNz+iXyXOYNnoQYBAAAAAAAAAAAAAAAAAAAAAAAAARQlmWs/aN9R2IFmuWLZd1MJk29fGSZd5KUPa6KlPxLWiSxX440WD+RG6rYI0U6rm792oo8l944hlOOYFuNY9Z3aGbYR3xBQmZbHxRpKBR8U7y431DpWNBEr9R53wF250UmSMiD6+2UPcoFyV3oeDtlkk54ZeN2O2XPKkFSuF2JTDrMXDn0HWQXaJyqDV/KvsPsALtXC5J063AzzXYahmTvsCGb6Bj+2XeYHci1DJO+w+zARTkbtlR9h9kB/w39b6X+jzR6s8Xc5dlCZ8YnLs/4/t+1BZlGR7zvO8hO+P/0FAS+PwEHbK4QjFyvwiCfKaqw7wA7Q7d3MsHGg8w+DQux4J0Hgm1XFCpGHqS8W9hekI9qLq6ng99h2xXn3qbYeNFEr7BydDukpvU+90fwDRafVh+6412y96gCr9CgHO/PyWo2q5JzOPar/t6h9Nf/AAAAAADADZSyH1BGPbtzepPL48V8dHi4MtqH60tJvdmOzNj6vm6mUZG+P4imRTRtmt1hzX6DZLu9m4/w2lRUgleMZuW5KfjrB2kxWcaZ5VQCi8+zKZfVX4Hg2uuKX+Ja7Hjjl8hXR9LoWXQdI+T3kusXC1410lCagSRp+CHgmLf/+JZobvGBVJ70Lo6cK7ORIuDTj++iPGktpBPyZC2pkCsiqDllqMrwfbmKbVd6fi2VnfUDGqu+W86WfV1DKkpT8onmgQVH+pX9pbqGB0k2nUdxttAb2R/2DA8aC8w/k1bmO6NFQ9kYLeTJuKI9w9MX/NrrmW6otgxp+JUabHkxK2jN8PKpUfQnlk4Ysk/Mg79wMtpO7RieFh0ESWF0y64dw0R+36riyeQuLDuGXx1l3jHZFe0YdsXkFpdhGpLE3DalgRqm5ipxoIZkZUpwsIZkbaoSB2t4NpW5GaxhlPluSExtxxquoalmOlzDiWOG6eczGoZOrfgdhtP69dvh8PDtdfaZzFQ6N1OJ1g2LzSgsg38W1ILL/qDYkfwRQx3RtmEV5v+tLVEajOfaD/8bFwyj422OlwblWbPwzsyMaNVwVvKqITvqjTqT4RuK0rss1lqtmRgRtGlYC5O79KgzqEaXgRtOZWfbiDfPfzA0MyFaM0wXsqEw37hvWEnHerpVTxpDN1Q8GtAH1w0TxVBPL8o3HwduqIwuq902LJTBsblq3h+2YaIMjl5UE8awDZ/VwWXfnTZ81DBUzRfDNtRYPMpUS4yDNkzH6uBYAkMYwhCGMIQhDGEIQxjCEIYwhCEMYQhDGMIQhjCEIQxhCEMYwhCGMIQhDGEIQxjCEIYwhCEMYQhDGMIQhjCEIQxdNKSqc8fcN7RyfumQDINc8YJVzTmTyi1DxTnCEe8NJuU5wsMyDM6SFwG/c4/fUL7FW2n8sCddK15A3Bk7AZsdN82ES7MU/SzZYscvceU11rruSfYZbx9iqgrbM8UFHpnwQHgm+351D8uXfkggPhAeAAAAAAAAAAAAAAAAAAAAAAD+j/wNCQx307ChGBYAAAAASUVORK5CYII=" alt="">
+                <a href="https://www.linkedin.com/in/mubbshira-p-73b2a8321">https://www.linkedin.com/in/mubbshira-p-73b2a8321</a>
             </div>
         </div>
-       
-        
-        
     </div>
-    
-    
-</body>
+</div>
 
+</body>
 </html>

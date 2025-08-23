@@ -1,176 +1,238 @@
+
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>my resume</title>
-    <style>
-       
-
-        
-
-        .header {
-            width: 100%;
-            height: 100vh;
-position: fixed;
-
-            background-color: rgb(244, 244, 161);
-        }
-
-        .h {
-            background: rgb(244, 244, 161);
-
-
-            display: flex;
-            font-family: Arial, Helvetica, sans-serif;
-
-        }
-
-        .h p {
-            font-size: 20px;
-            align-items: center;
-            position: relative;
-            right: 1%;
-            top: 7px;
-
-        }
-
-
-        .right a {
-
-            color: black;
-            text-decoration: none;
-            position: relative;
-            left: 600px;
-            margin: 20px;
-            bottom: 40px;
-
-        }
-
-        .right a:hover {
-            text-decoration: underline;
-        }
-
-        .main {
-            position: relative;
-            top: 25%;
-            padding-left: 20px;
-        }
-
-        .photo img {
-            position: relative;
-            left: 67%;
-            bottom: 300px;
-
-
-        }
-
-        .photo img {
-            border-radius: 50%;
-            width: 260px;
-            height: 250px;
-            object-fit: cover;
-            border: 2px solid rgb(241, 241, 128);
-            box-shadow: 0px 4px 15px rgb(229, 226, 59);
-
-        }
-
-        .p2 {
-            position: relative;
-            left: 65%;
-            bottom: 23%;
-           
-        }
-
-        .p3 {
-            position: relative;
-            left: 67%;
-            bottom:10px;
-
-        }
-        /* Mobile view adjustments */
-@media (max-width: 480px) {
-    .header {
-        height: auto;
-        position: relative;
-        padding-bottom: 20px;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Resume</title>
+<style>
+    /* Reset & Base */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    .h {
+    body {
+        background: linear-gradient(135deg, #f4f4a1, #fff9e6);
+        color: #333;
+        overflow-x: hidden;
+    }
+
+    a {
+        transition: all 0.3s ease;
+    }
+
+    a:hover {
+        color: #a67c00;
+    }
+
+    .header {
+        width: 100%;
+        min-height: 100vh;
+        padding: 30px 20px;
+        display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
     }
 
-    .h p {
-        font-size: 18px;
-        top: 0;
-        right: 0;
-        margin: 10px 0;
+    .nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
     }
 
-    .right a {
-        position: static;
-        display: inline-block;
-        margin: 5px 10px;
-        left: 0;
-        bottom: 0;
+    .nav img {
+        width: 80px;
+        height: auto;
+        transition: transform 0.3s ease;
     }
 
+    .nav img:hover {
+        transform: rotate(10deg) scale(1.05);
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .nav-links p {
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 15px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #333;
+        margin: 0 10px;
+        font-weight: 500;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .nav-links a:hover {
+        background-color: rgba(166,124,0,0.2);
+        color: #a67c00;
+    }
+
+    
     .main {
-        top: 0;
-        padding: 10px;
         text-align: center;
+        margin-bottom: 40px;
+    }
+    #lo{
+        width:100px;
+    }
+
+    .main h1 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #7a4e00;
+      position: relative;
+      bottom:80px;
+        text-shadow: 1px 1px 8px #fff8d0;
+    }
+
+    .main h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: #a67c00;
+         position: relative;
+      bottom:60px;
+        text-shadow: 1px 1px 6px #fffbe0;
+    }
+
+    .main p {
+        font-size: 16px;
+        max-width: 500px;
+        margin: 0 auto;
+        line-height: 1.5;
+           position: relative;
+      bottom:40px;
+        color: #4d3c00;
+    }
+
+    .photo {
+        margin-top: 20px;
+        border-radius: 50%;
+        overflow: hidden;
+        width: 250px;
+            position: relative;
+      bottom:60px;
+        height: 250px;
+        border: 3px solid #fff9e6;
+        box-shadow: 0 2px 15px yellow;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
     .photo img {
-        position: static;
-        margin-top: 20px;
-        width: 180px;
-        height: 180px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
-    .p2, .p3 {
-        display: none; /* Hide extra floating images on mobile for cleaner look */
+    .photo:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.3);
     }
-}
 
-    </style>
+    
+    @media (max-width: 768px) {
+        .main h1 {
+            font-size: 28px;
+            position: relative;
+            bottom: -90px;
+        }
+
+        .main h3 {
+            font-size: 20px;
+              position: relative;
+            bottom: -90px;
+        }
+
+        .main p {
+            font-size: 14px;
+              position: relative;
+            bottom: -90px;
+        }
+
+        .photo {
+            width: 180px;
+            height: 180px;
+              position: relative;
+            bottom: -90px;
+        }
+
+        .nav-links p {
+            font-size: 18px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            margin: 5px 8px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .main h1 {
+            font-size: 24px;
+        }
+
+        .main h3 {
+            font-size: 18px;
+        }
+
+        .main p {
+            font-size: 13px;
+        }
+
+        .photo {
+            width: 150px;
+            height: 150px;
+        }
+
+        .nav-links p {
+            font-size: 16px;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+            margin: 4px 6px;
+        }
+    }
+
+</style>
 </head>
-
 <body>
     <div class="header">
-        <div class="h">
-            <img src="download__6_-removebg-preview.png" width="80px">
-            <div class="right">
-                <p>Mubbashira Pathan</p>
-                <a href="resume.html">Home</a>
+        <div class="nav">
+            <img  id="lo" src="download__6_-removebg-preview.png" alt="Logo">
+            <div class="nav-links">
+             
+                <a href="index.html">Home</a>
                 <a href="skill.html">Skill</a>
                 <a href="aboutme.html">About</a>
                 <a href="contact.html">Contact</a>
             </div>
         </div>
-        <div class="main">
-            <h1>
-                I am Mubbashira Pathan,</h1>
-            <h3> A Computer Engineering Student</h3>
 
-            <p>
-                A code-loving Computer Engineering student<br> turning ideas into digital reality.
-            </p>
+        <div class="main">
+            <h1>I am Mubbashira Pathan,</h1>
+            <h3>A Computer Engineering Student</h3>
+            <p>A code-loving Computer Engineering student turning ideas into digital reality. Passionate about clean code, UI/UX, and front-end development, aspiring to be a full-stack developer.</p>
         </div>
-        <div class="p2">
-            <img id="pp" src="images__2_-removebg-preview.png" alt="" width="150px">
-        </div>
-        <div class="p3">
-            <img id="pp" src="images__2_-removebg-preview.png" alt="" width="100px">
-        </div>
+
         <div class="photo">
-            <img id="p1" src="WhatsApp Image 2025-06-28 at 1.32.39 AM.jpeg" alt="" width="250px">
+            <img src="WhatsApp Image 2025-06-28 at 1.32.39 AM.jpeg" alt="Profile Photo">
         </div>
     </div>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> a5ac888 (done)
